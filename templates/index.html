@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Banking.io</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </header>
+    <body >
+        <!---BOT WIDGET --->
+        <div id="rasa-chat-widget" data-websocket-url="https://ffd5-27-106-12-93.ngrok.io" style="color: bisque;">
+        </div>
+        <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript">
+        </script>
+        <!---NAVBAR --->
+        <div class="navbar">
+            <h1 class="logo">Banking.io</h1>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Cards</a></li>
+                <li><a href="#">Invest</a></li>
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+            </ul>
+        </div>
+        <!---TEXT PAGE --->
+        <div class="body-page">
+            <h1>Sophisticated Banking at your fingertips.</h1>
+            <div class="wrapper">
+            <div class="static-text"><h3>AI driven bots to power your</h1></div>
+            <ul class="dynamic-text">
+                <li><span>Banking!</span></li>
+                <li><span>Investing!</span></li>
+                <li><span>Interacting!</span></li>
+            </ul>
+            </div>
+        </div>
+        <!---POP-UP --->
+        <div class="pop-up">
+                <div id="openModal" class="modalDialog">
+                <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <p style="color:rgb(0, 0, 0)">Please use the chatbot on the bottom right of the page to continue.</p>
+                <br/>
+                <p ><li style="color:rgb(0, 0, 0)">Step1: Comlete KYC.</li></p>
+                <br/>
+                <p ><li style="color:rgb(0, 0, 0)">Step2: Initialize Bank account.</li></p>
+                <br/>
+                <p ><li style="color:rgb(0, 0, 0)">Step3: Enjoy error and hassel free banking.</li></p>
+                <br/>
+                </div>
+                </div>
+                <script>
+                function openPopup() {
+                    window.location.hash = 'openModal';
+                  }
+                  window.onload = openPopup;
+                  </script>
+        </div>
+        <!---SERVICES --->
+        <div class="services">
+
+        <div class="text1">
+            <p>Cards</p>
+        <div class="credit-card">
+            <div class="visa"><h4>VISA</h4></div>
+            <div class="name-bank">InputOutput Bank</div>
+            <div class="card-number">1 2 3 4 - 5 6 7 8 - 9 8 7 6 - 5 4 3 2 </div>
+            <div class="expiry-date">Expires-01/25</div>
+            <div class="name">John Doe</div>
+            <div class="empty">.</div>
+        </div>
+        </div>
+
+        <div class="text2"><p>Investments</p>
+        <div class="pie-chart"><img src="{{ url_for('static', filename='2.jpeg') }}" />
+        </div>
+        </div>
+
+        </div>
+    </body>
+</html>
